@@ -1,0 +1,45 @@
+body {
+  background-color: lavender;
+  margin: 0;
+  padding: 0;
+}
+
+#create-message {
+  outline: none;
+  text-align: center;
+}
+
+.App-container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-container {
+  width: 20%;
+  border-right: 5px ridge black;
+}
+
+.room-component {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-25%);
+  border: 2px solid blue;
+}
+
+.room-list {
+}
+
+.delete-room {
+  margin: 20px;
+}
+
+.user-component {
+  width: fit-content;
+}
+
+.sign-in-container {
+}
+
+.message-component {
+  border: 2px solid green;
+}
