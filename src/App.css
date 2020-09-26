@@ -6,7 +6,6 @@ body {
 
 .input-container {
   position: absolute;
-
   bottom: 20px;
 }
 
@@ -15,9 +14,6 @@ body {
   flex-direction: row;
   outline: none;
   text-align: center;
-}
-
-.messages-list {
 }
 
 .message-input {
@@ -31,6 +27,7 @@ body {
 
 .left-container {
   margin-left: 10px;
+  margin-right: 10px;
   border-right: 5px ridge black;
   width: 30%;
 }
@@ -52,6 +49,18 @@ body {
 }
 
 .sign-in-container {
+}
+
+.authentication-btns {
+  display: flex;
+  width: fit-content;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+#sign-in-btn {
+  margin-right: 10px;
 }
 
 .message-component {
@@ -77,7 +86,7 @@ body {
 
 .three {
   position: absolute;
-  right: 0;
+  right: 10px;
 }
 
 .four {

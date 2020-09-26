@@ -19,15 +19,25 @@ class User extends Component {
   render() {
     return (
       <div className='sign-in-container'>
-        <div className=''>
-          <p>
-            Signed in as:{' '}
-            {this.props.user ? this.props.user.displayName : 'Guest'}
-          </p>
-        </div>
-        <div className=''>
-          <button onClick={() => this.signIn()}>Sign in!</button>
-          <button onClick={() => this.signOut()}>Sign out!</button>
+        <p>
+          Signed in as:{' '}
+          {this.props.user ? this.props.user.displayName : 'Guest'}
+        </p>
+        <div className='authentication-btns'>
+          <button
+            className='sign-btn'
+            id='sign-in-btn'
+            onClick={() => this.signIn()}
+          >
+            Sign in!
+          </button>
+          <button
+            className='sign-btn'
+            id='sign-out-btn'
+            onClick={() => this.signOut()}
+          >
+            Sign out!
+          </button>
         </div>
       </div>
     );
