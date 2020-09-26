@@ -54,8 +54,11 @@ class RoomList extends Component {
         </div>
         <div className='room-list'>
           {this.state.rooms.map((room) => (
-            <div key={room.key}>
-              <button onClick={() => this.props.setActiveRoom(room)}>
+            <div className='individual-rooms' key={room.key}>
+              <button
+                className='room'
+                onClick={() => this.props.setActiveRoom(room)}
+              >
                 {room.name}
               </button>
             </div>
@@ -64,25 +67,28 @@ class RoomList extends Component {
         <div className='create-room'>
           <form onSubmit={(e) => this.createRoom(e)}>
             <input
+              className='create-room-input'
               type='text'
               value={this.state.newRoom}
               placeholder='New Room Name'
               onChange={this.handleChange.bind(this)}
             />
-            <button type='submit'>Create</button>
-          </form>
-        </div>
-        <div className='delete-room'>
-          {this.props.user !== null ? (
-            <button
-              type='submit'
-              onClick={() => this.deleteRoom(this.props.activeRoom)}
-            >
-              Delete Current Room
+            <button className='create-room-btn' type='submit'>
+              Create
             </button>
-          ) : (
-            <div className='no-delete' />
-          )}
+          </form>
+          <div className='delete-room'>
+            {this.props.user !== null ? (
+              <button
+                type='submit'
+                onClick={() => this.deleteRoom(this.props.activeRoom)}
+              >
+                Delete Current Room
+              </button>
+            ) : (
+              <div className='no-delete' />
+            )}
+          </div>
         </div>
       </div>
     );

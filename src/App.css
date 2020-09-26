@@ -33,15 +33,44 @@ body {
 }
 
 .room-component {
-  width: fit-content;
   transform: translateY(70%);
 }
 
 .room-list {
 }
 
+.individual-rooms {
+}
+
+.room {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.create-room {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-room-input {
+  margin: 5px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.create-room-btn {
+  margin: 5px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 .delete-room {
-  margin: 25px;
+  margin-top: 20px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .user-component {
