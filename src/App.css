@@ -4,9 +4,24 @@ body {
   padding: 0;
 }
 
-#create-message {
+.input-container {
+  position: absolute;
+
+  bottom: 20px;
+}
+
+.create-message {
+  display: flex;
+  flex-direction: row;
   outline: none;
   text-align: center;
+}
+
+.messages-list {
+}
+
+.message-input {
+  margin-right: 10px;
 }
 
 .App-container {
@@ -15,15 +30,14 @@ body {
 }
 
 .left-container {
-  width: 20%;
+  margin-left: 10px;
   border-right: 5px ridge black;
+  width: 30%;
 }
 
 .room-component {
-  position: absolute;
-  top: 25%;
-  transform: translateY(-25%);
-  border: 2px solid blue;
+  width: fit-content;
+  transform: translateY(70%);
 }
 
 .room-list {
@@ -41,5 +55,33 @@ body {
 }
 
 .message-component {
-  border: 2px solid green;
+  width: 100%;
+}
+
+.content-below {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid grey;
+}
+
+.one {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.two {
+}
+
+.three {
+  position: absolute;
+  right: 0;
+}
+
+.four {
+}
+
+.five {
 }

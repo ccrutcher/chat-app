@@ -64,24 +64,31 @@ class MessageList extends Component {
             {this.state.messages
               .filter((message) => this.props.activeRoom.key === message.roomId)
               .map((message) => (
-                <div className='' key={message.key}>
-                  <div className=''>{message.content}</div>
-                  <div className=''>
-                    <div className=''>{message.username}</div>
-                    <div className=''>{time(message)}</div>
+                <div className='one' key={message.key}>
+                  <div className='name-above'>
+                    <div className='four'>{message.username}:</div>
+                  </div>
+                  <div className='content-below'>
+                    <div className='two'>{message.content}</div>
+                    <div className='three'>
+                      <div className='five'>{time(message)}</div>
+                    </div>
                   </div>
                 </div>
               ))}
           </div>
-          <form id='create-message' onSubmit={this.createMessage}>
-            <input
-              type='text'
-              value={this.state.newMessage}
-              placeholder='Send a message!'
-              onChange={this.handleChange}
-            />
-            <input type='submit' value='Send' />
-          </form>
+          <div className='input-container'>
+            <form className='create-message' onSubmit={this.createMessage}>
+              <input
+                className='message-input'
+                type='text'
+                value={this.state.newMessage}
+                placeholder='Send a message!'
+                onChange={this.handleChange}
+              />
+              <input type='submit' value='Send' />
+            </form>
+          </div>
         </main>
       );
     } else {
