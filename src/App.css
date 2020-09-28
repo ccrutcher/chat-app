@@ -33,7 +33,7 @@ body {
 }
 
 .room-component {
-  transform: translateY(70%);
+  margin-top: 20%;
 }
 
 .room-list {

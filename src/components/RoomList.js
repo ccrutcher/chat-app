@@ -26,18 +26,20 @@ class RoomList extends Component {
   }
 
   deleteRoom(activeRoom) {
-    const roomToDelete = this.props.firebase
-      .database()
-      .ref('rooms/' + activeRoom.key);
-    roomToDelete.remove();
+    this.roomsRef.child(activeRoom.key).remove();
     this.props.setActiveRoom(null);
   }
 
   createRoom(e) {
-    this.setState({ newRoom: '' });
-    this.roomsRef.push({
-      name: this.state.newRoom,
-    });
+    if (this.state.newRoom !== '') {
+      e.preventDefault();
+      this.setState({ newRoom: '' });
+      this.roomsRef.push({
+        name: this.state.newRoom,
+      });
+    } else {
+      alert('please enter a valid room name');
+    }
   }
 
   handleChange(e) {
@@ -57,6 +59,7 @@ class RoomList extends Component {
             <div className='individual-rooms' key={room.key}>
               <button
                 className='room'
+                id={room.name}
                 onClick={() => this.props.setActiveRoom(room)}
               >
                 {room.name}
@@ -76,19 +79,19 @@ class RoomList extends Component {
             <button className='create-room-btn' type='submit'>
               Create
             </button>
-            <div className='delete-room'>
-              {this.props.user !== null ? (
-                <button
-                  type='submit'
-                  onClick={() => this.deleteRoom(this.props.activeRoom)}
-                >
-                  Delete Current Room
-                </button>
-              ) : (
-                <div className='no-delete' />
-              )}
-            </div>
           </form>
+        </div>
+        <div className='delete-room'>
+          {this.props.user !== null ? (
+            <button
+              type='submit'
+              onClick={() => this.deleteRoom(this.props.activeRoom)}
+            >
+              Delete Current Room
+            </button>
+          ) : (
+            <div className='no-delete' />
+          )}
         </div>
       </div>
     );
