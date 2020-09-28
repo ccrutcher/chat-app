@@ -40,10 +40,19 @@ class MessageList extends Component {
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
     });
     this.setState({ newMessage: '' });
+    setTimeout(function() {
+      let objDiv = document.getElementById('messages-list');
+      objDiv.scrollTop = objDiv.scrollHeight - objDiv.clientHeight;
+    }, 5);
   }
 
   handleChange(e) {
     this.setState({ newMessage: e.target.value });
+  }
+
+  updateScroll() {
+    let objDiv = document.getElementById('messages-list');
+    objDiv.scrollTop = objDiv.scrollHeight - objDiv.clientHeight;
   }
 
   render() {
@@ -59,39 +68,45 @@ class MessageList extends Component {
     if (this.props.activeRoom !== null && this.props.activeRoom.name) {
       return (
         <main>
-          <div className='current-room-name-wrapper'>
-            <div className='current-room-name'>
-              <h1>{this.props.activeRoom.name}</h1>
+          <div className='message-container'>
+            <div className='current-room-name-wrapper'>
+              <div className='current-room-name'>
+                <h1>{this.props.activeRoom.name}</h1>
+              </div>
             </div>
-          </div>
-          <div className='messages-list'>
-            {this.state.messages
-              .filter((message) => this.props.activeRoom.key === message.roomId)
-              .map((message) => (
-                <div className='one' key={message.key}>
-                  <div className='name-above'>
-                    <div className='four'>{message.username}:</div>
-                  </div>
-                  <div className='content-below'>
-                    <div className='two'>{message.content}</div>
-                    <div className='three'>
-                      <div className='five'>{time(message)}</div>
+            <div className='messages-list-wrapper'>
+              <div className='messages-list' id='messages-list'>
+                {this.state.messages
+                  .filter(
+                    (message) => this.props.activeRoom.key === message.roomId
+                  )
+                  .map((message) => (
+                    <div className='one' key={message.key}>
+                      <div className='name-above'>
+                        <div className='four'>{message.username}:</div>
+                      </div>
+                      <div className='content-below'>
+                        <div className='two'>{message.content}</div>
+                        <div className='three'>
+                          <div className='five'>{time(message)}</div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              ))}
-          </div>
-          <div className='input-container'>
-            <form className='create-message' onSubmit={this.createMessage}>
-              <input
-                className='message-input'
-                type='text'
-                value={this.state.newMessage}
-                placeholder='Send a message!'
-                onChange={this.handleChange}
-              />
-              <input type='submit' value='Send' />
-            </form>
+                  ))}
+              </div>
+            </div>
+            <div className='input-container'>
+              <form className='create-message' onSubmit={this.createMessage}>
+                <input
+                  className='message-input'
+                  type='text'
+                  value={this.state.newMessage}
+                  placeholder='Send a message!'
+                  onChange={this.handleChange}
+                />
+                <input type='submit' value='Send' />
+              </form>
+            </div>
           </div>
         </main>
       );
