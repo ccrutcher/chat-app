@@ -59,8 +59,12 @@ class MessageList extends Component {
     if (this.props.activeRoom !== null && this.props.activeRoom.name) {
       return (
         <main>
+          <div className='current-room-name-wrapper'>
+            <div className='current-room-name'>
+              <h1>{this.props.activeRoom.name}</h1>
+            </div>
+          </div>
           <div className='messages-list'>
-            <h1>{this.props.activeRoom.name}</h1>
             {this.state.messages
               .filter((message) => this.props.activeRoom.key === message.roomId)
               .map((message) => (

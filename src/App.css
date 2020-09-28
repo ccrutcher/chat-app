@@ -7,6 +7,17 @@ body {
 .input-container {
   position: absolute;
   bottom: 20px;
+  width: 75vw;
+  border-top: 2px solid black;
+}
+
+.current-room-name-wrapper {
+  border-bottom: 2px solid black;
+}
+
+.current-room-name {
+  width: fit-content;
+  margin-left: 20px;
 }
 
 .create-message {
@@ -14,9 +25,11 @@ body {
   flex-direction: row;
   outline: none;
   text-align: center;
+  margin-top: 10px;
 }
 
 .message-input {
+  margin-left: 10px;
   margin-right: 10px;
 }
 
@@ -26,17 +39,25 @@ body {
 }
 
 .left-container {
-  margin-left: 10px;
-  margin-right: 10px;
   border-right: 5px ridge black;
-  width: 30%;
+  width: 30vw;
+}
+
+.room-container {
 }
 
 .room-component {
-  margin-top: 20%;
+  margin-top: 10%;
+}
+
+.current-room {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .room-list {
+  margin-bottom: 20px;
 }
 
 .individual-rooms {
@@ -58,7 +79,7 @@ body {
   margin: 5px;
   margin-left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 50%;
 }
 
 .create-room-btn {
@@ -66,18 +87,23 @@ body {
   transform: translateX(-50%);
 }
 
-.delete-room {
+.delete-wrapper {
   margin-top: 20px;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.delete-room {
+  width: fit-content;
 }
 
 .user-component {
-  width: fit-content;
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 15px;
 }
 
 .sign-in-container {
-  width: fit-content;
 }
 
 .authentication-btns {
@@ -126,6 +152,12 @@ body {
   display: flex;
   flex-direction: row;
   border-top: 1px solid grey;
+}
+
+.messages-list {
+  border: 2px solid green;
+  height: 100%;
+  overflow: auto;
 }
 
 .one {
