@@ -19,13 +19,20 @@ body {
 .left-container {
   border-right: 5px ridge black;
   width: 30vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .room-container {
+  color: white;
 }
 
 .room-component {
-  margin-top: 10%;
+  background-color: white;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgb(24, 51, 78);
 }
 
 .current-room {
@@ -65,6 +72,32 @@ body {
   transform: translateX(-50%);
 }
 
+#delete-btn {
+  box-shadow: inset 0px 1px 0px 0px #cf866c;
+  background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+  background-color: #d0451b;
+  border-radius: 3px;
+  border: 1px solid #942911;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 10px;
+  padding: 3px 12px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #854629;
+}
+
+#delete-btn:hover {
+  background: linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+  background-color: #bc3315;
+}
+
+#delete-btn:active {
+  position: relative;
+  top: 1px;
+}
+
 .delete-wrapper {
   margin-top: 20px;
   display: flex;
@@ -77,8 +110,12 @@ body {
 
 .user-component {
   text-align: center;
-  border-bottom: 2px solid black;
   padding-bottom: 15px;
+  background-color: rgb(47, 98, 150);
+  color: white;
+  width: 100%;
+  border-bottom: 5px solid black;
+  border-right: 1px solid black;
 }
 
 .sign-in-container {
@@ -94,8 +131,8 @@ body {
 
 .sign-btn {
   box-shadow: inset 0px 1px 3px 0px #91b8b3;
-  background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-  background-color: #768d87;
+  background: rgb(24, 51, 78);
+  background-color: rgb(24, 51, 78);
   border-radius: 5px;
   border: 1px solid #566963;
   display: inline-block;
@@ -109,8 +146,8 @@ body {
   text-shadow: 0px -1px 0px #2b665e;
 }
 .sign-btn:hover {
-  background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-  background-color: #6c7c7c;
+  background: rgb(32, 66, 99);
+  background-color: rgb(32, 66, 99);
 }
 .sign-btn:active {
   position: relative;
@@ -119,6 +156,12 @@ body {
 
 #sign-in-btn {
   margin-right: 10px;
+}
+
+.welcome-message {
+  margin-top: 2.5%;
+  margin-left: 2.5%;
+  font-size: 30px;
 }
 
 .message-component {
@@ -133,6 +176,8 @@ body {
 
 .current-room-name-wrapper {
   border-bottom: 2px solid black;
+  background-color: rgb(24, 51, 78);
+  color: white;
 }
 
 .current-room-name {
@@ -151,6 +196,30 @@ body {
 .message-input {
   margin-left: 10px;
   margin-right: 10px;
+  width: 50%;
+}
+
+#send-btn {
+  background-color: rgb(47, 98, 150);
+  border-radius: 6px;
+  border: 1px solid #337fed;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px rgb(34, 70, 105);
+}
+#send-btn:hover {
+  background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+  background-color: #1e62d0;
+}
+#send-btn:active {
+  position: relative;
+  top: 1px;
 }
 
 .content-below {
@@ -161,11 +230,12 @@ body {
 }
 
 .messages-list-wrapper {
-  margin-left: 5px;
+  height: 100vh;
 }
 
 .messages-list {
-  width: 100%;
+  width: 99%;
+  margin-left: 5px;
   max-height: 75vh;
   overflow: auto;
 }

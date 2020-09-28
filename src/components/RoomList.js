@@ -76,7 +76,7 @@ class RoomList extends Component {
               placeholder='New Room Name'
               onChange={this.handleChange.bind(this)}
             />
-            <button className='create-room-btn' type='submit'>
+            <button id='create-btn' className='create-room-btn' type='submit'>
               Create
             </button>
           </form>
@@ -85,6 +85,7 @@ class RoomList extends Component {
           <div className='delete-room'>
             {this.props.user !== null ? (
               <button
+                id='delete-btn'
                 type='submit'
                 onClick={() => this.deleteRoom(this.props.activeRoom)}
               >

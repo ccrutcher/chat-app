@@ -104,7 +104,7 @@ class MessageList extends Component {
                   placeholder='Send a message!'
                   onChange={this.handleChange}
                 />
-                <input type='submit' value='Send' />
+                <input id='send-btn' type='submit' value='Send' />
               </form>
             </div>
           </div>
@@ -113,7 +113,7 @@ class MessageList extends Component {
     } else {
       return (
         <main>
-          <div className=''>Welcome! Select a room to join!</div>
+          <div className='welcome-message'>Welcome! Select a room to join!</div>
         </main>
       );
     }
