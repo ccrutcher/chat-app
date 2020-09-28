@@ -76,19 +76,19 @@ class RoomList extends Component {
             <button className='create-room-btn' type='submit'>
               Create
             </button>
+            <div className='delete-room'>
+              {this.props.user !== null ? (
+                <button
+                  type='submit'
+                  onClick={() => this.deleteRoom(this.props.activeRoom)}
+                >
+                  Delete Current Room
+                </button>
+              ) : (
+                <div className='no-delete' />
+              )}
+            </div>
           </form>
-          <div className='delete-room'>
-            {this.props.user !== null ? (
-              <button
-                type='submit'
-                onClick={() => this.deleteRoom(this.props.activeRoom)}
-              >
-                Delete Current Room
-              </button>
-            ) : (
-              <div className='no-delete' />
-            )}
-          </div>
         </div>
       </div>
     );
