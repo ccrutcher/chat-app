@@ -240,23 +240,14 @@ body {
   overflow: auto;
 }
 
-.one {
+.message-content {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-bottom: 20px;
 }
 
-.two {
-}
-
-.three {
+.message-time {
   position: absolute;
   right: 10px;
-}
-
-.four {
-}
-
-.five {
 }

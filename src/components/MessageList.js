@@ -81,14 +81,14 @@ class MessageList extends Component {
                     (message) => this.props.activeRoom.key === message.roomId
                   )
                   .map((message) => (
-                    <div className='one' key={message.key}>
+                    <div className='message-content' key={message.key}>
                       <div className='name-above'>
-                        <div className='four'>{message.username}:</div>
+                        <div>{message.username}:</div>
                       </div>
                       <div className='content-below'>
-                        <div className='two'>{message.content}</div>
-                        <div className='three'>
-                          <div className='five'>{time(message)}</div>
+                        <div>{message.content}</div>
+                        <div className='message-time'>
+                          <div>{time(message)}</div>
                         </div>
                       </div>
                     </div>
