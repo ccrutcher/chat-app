@@ -6,13 +6,21 @@ import MessageList from './components/MessageList.js';
 import User from './components/User.js';
 
 // Initialize Firebase
+// var config = {
+//   apiKey: 'AIzaSyDn811S9uqqCqmt7nPF2c2OR0s-W-X1eGY',
+//   authDomain: 'chat-app-6d56e.firebaseapp.com',
+//   databaseURL: 'https://chat-app-6d56e.firebaseio.com/',
+//   projectId: 'chat-app-6d56e',
+//   storageBucket: 'chat-app-6d56e.appspot.com',
+//   messagingSenderId: '775190416241',
+// };
 var config = {
   apiKey: 'AIzaSyDn811S9uqqCqmt7nPF2c2OR0s-W-X1eGY',
-  authDomain: 'chat-app-6d56e.firebaseapp.com',
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   databaseURL: 'https://chat-app-6d56e.firebaseio.com/',
-  projectId: 'chat-app-6d56e',
-  storageBucket: 'chat-app-6d56e.appspot.com',
-  messagingSenderId: '775190416241',
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 firebase.initializeApp(config);
 
