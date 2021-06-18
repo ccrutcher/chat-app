@@ -5,15 +5,6 @@ import RoomList from './components/RoomList.js';
 import MessageList from './components/MessageList.js';
 import User from './components/User.js';
 
-// Initialize Firebase
-// var config = {
-//   apiKey: 'AIzaSyDn811S9uqqCqmt7nPF2c2OR0s-W-X1eGY',
-//   authDomain: 'chat-app-6d56e.firebaseapp.com',
-//   databaseURL: 'https://chat-app-6d56e.firebaseio.com/',
-//   projectId: 'chat-app-6d56e',
-//   storageBucket: 'chat-app-6d56e.appspot.com',
-//   messagingSenderId: '775190416241',
-// };
 var config = {
   apiKey: 'AIzaSyDn811S9uqqCqmt7nPF2c2OR0s-W-X1eGY',
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
